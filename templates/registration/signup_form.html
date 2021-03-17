@@ -1,0 +1,18 @@
+{% extends '../base.html' %}
+
+
+{% block content %}
+
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title">Signup for an account</h4>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="hidden" name="next" value="{{ next }}">
+            <button type="submit" class="btn btn-primary btn-block">Register</button>
+
+        </form>
+    </div>
+</div>
+{% endblock %}
